@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/design/**)",
+      "Read(/frontend/src/**)",
+      "Read(/backend/src/**)",
+      "Edit(/frontend/src/**)",
+      "Edit(/backend/src/**)",
+      "Edit(/CLAUDE.md)",
+      "Edit(/frontend/README.md)",
+      "Edit(/backend/README.md)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run seed)",
+      "Bash(curl http://localhost:*)",
+      "Bash(curl -s http://localhost:*)",
+      "Bash(curl http://127.0.0.1:*)",
+      "Bash(curl -s http://127.0.0.1:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Read(/backend/.env)",
+      "Edit(/backend/.env)",
+      "Bash(cat backend/.env:*)",
+      "Bash(cat .env:*)",
+      "Edit(/design/**)",
+      "Bash(npm run seed:reset:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(brew:*)",
+      "Bash(npm install -g:*)",
+      "Bash(npm i -g:*)"
+    ]
+  }
+}
