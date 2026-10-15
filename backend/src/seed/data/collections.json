@@ -1,0 +1,403 @@
+[
+  {
+    "slug": "weekend",
+    "order": 0,
+    "label": "Plan your weekend",
+    "crumb": "This weekend",
+    "eyebrow": "Saturday 10 – Sunday 11 October",
+    "titleA": "Plan your",
+    "titleB": "weekend",
+    "intro": "Everything worth doing this Saturday and Sunday, split by day and time — so you can build a plan, not just browse.",
+    "span": "Sat 10 – Sun 11 Oct",
+    "heroTone": "deep",
+    "heroPhoto": "Weekend crowd at the lakefront",
+    "date": "This Weekend",
+    "subs": [
+      "All",
+      "Morning",
+      "Afternoon",
+      "Evening"
+    ],
+    "badge": "time",
+    "featured": "food",
+    "tipTitle": "A plan for Saturday:",
+    "tip": "sunrise walk at the Qutb Shahi Tombs, pottery before lunch, then the night food festival on Necklace Road after sunset.",
+    "groups": [
+      {
+        "a": "Saturday",
+        "b": "10 October",
+        "items": [
+          [
+            "heritage",
+            "Morning"
+          ],
+          [
+            "farmers",
+            "Morning"
+          ],
+          [
+            "pottery",
+            "Morning"
+          ],
+          [
+            "craft",
+            "Afternoon"
+          ],
+          [
+            "food",
+            "Evening"
+          ],
+          [
+            "comedy",
+            "Evening"
+          ]
+        ]
+      },
+      {
+        "a": "Sunday",
+        "b": "11 October",
+        "items": [
+          [
+            "science",
+            "Afternoon"
+          ],
+          [
+            "flea",
+            "Afternoon"
+          ],
+          [
+            "craft",
+            "Afternoon"
+          ],
+          [
+            "indie",
+            "Evening"
+          ],
+          [
+            "food",
+            "Evening"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "exhibitions",
+    "order": 1,
+    "label": "Exhibitions & trade fairs",
+    "crumb": "Exhibitions",
+    "eyebrow": "October in Hyderabad",
+    "titleA": "Exhibitions",
+    "titleB": "& trade fairs",
+    "intro": "Craft bazaars, property and home expos, shopping showcases and trade fairs — what is on now and what is opening next.",
+    "span": "9 – 31 Oct",
+    "heroTone": "accent",
+    "heroPhoto": "Expo hall aisles",
+    "date": "This Month",
+    "subs": [
+      "All",
+      "Art & craft",
+      "Property & home",
+      "Shopping",
+      "Business & trade"
+    ],
+    "badge": "date",
+    "featured": "expo",
+    "tipTitle": "Visiting a trade fair?",
+    "tip": "Many need free visitor registration — register online beforehand to skip the queue at the gate.",
+    "groups": [
+      {
+        "a": "On",
+        "b": "now",
+        "items": [
+          [
+            "craft",
+            "Art & craft"
+          ]
+        ]
+      },
+      {
+        "a": "Opening",
+        "b": "this week",
+        "items": [
+          [
+            "expo",
+            "Property & home"
+          ]
+        ]
+      },
+      {
+        "a": "Later",
+        "b": "this month",
+        "items": [
+          [
+            "bridal",
+            "Shopping"
+          ],
+          [
+            "jobs",
+            "Business & trade"
+          ],
+          [
+            "agri",
+            "Business & trade"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "markets",
+    "order": 2,
+    "label": "Markets & shopping",
+    "crumb": "Markets & shopping",
+    "eyebrow": "Food festivals · Flea markets · Pop-ups",
+    "titleA": "Markets",
+    "titleB": "& shopping",
+    "intro": "Night food festivals, Sunday flea markets, farmers’ markets and pop-up bazaars from small local brands.",
+    "span": "10 – 25 Oct",
+    "heroTone": "warm",
+    "heroPhoto": "Stalls at a flea market",
+    "date": "This Month",
+    "subs": [
+      "All",
+      "Food",
+      "Flea & vintage",
+      "Pop-ups",
+      "Farmers' markets",
+      "Shopping exhibitions"
+    ],
+    "badge": "date",
+    "featured": "flea",
+    "tipTitle": "Good to know:",
+    "tip": "carry some cash and a cloth bag — many stalls at flea and farmers’ markets are small sellers.",
+    "groups": [
+      {
+        "a": "This",
+        "b": "weekend",
+        "items": [
+          [
+            "food",
+            "Food"
+          ],
+          [
+            "flea",
+            "Flea & vintage"
+          ],
+          [
+            "farmers",
+            "Farmers' markets"
+          ]
+        ]
+      },
+      {
+        "a": "Coming",
+        "b": "up",
+        "items": [
+          [
+            "makers",
+            "Pop-ups"
+          ],
+          [
+            "bridal",
+            "Shopping exhibitions"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "family",
+    "order": 3,
+    "label": "Family picks",
+    "crumb": "Family picks",
+    "eyebrow": "Kids · Weekend outings · Shows",
+    "titleA": "Family activities",
+    "titleB": "& entertainment",
+    "intro": "Hands-on carnivals, puppet shows, nature walks and easy outdoor mornings that work for kids and grown-ups.",
+    "span": "11 – 24 Oct",
+    "heroTone": "soft",
+    "heroPhoto": "Family at a science stall",
+    "date": "This Month",
+    "subs": [
+      "All",
+      "Indoors",
+      "Outdoors",
+      "Shows",
+      "Learning"
+    ],
+    "badge": "date",
+    "featured": "science",
+    "tipTitle": "Going with little ones?",
+    "tip": "morning slots are cooler and quieter; check each listing for pram access and age guidance.",
+    "groups": [
+      {
+        "a": "This",
+        "b": "weekend",
+        "items": [
+          [
+            "science",
+            "Learning"
+          ],
+          [
+            "food",
+            "Outdoors"
+          ]
+        ]
+      },
+      {
+        "a": "Next",
+        "b": "weekend",
+        "items": [
+          [
+            "puppet",
+            "Shows"
+          ],
+          [
+            "cycle",
+            "Outdoors"
+          ],
+          [
+            "makers",
+            "Indoors"
+          ]
+        ]
+      },
+      {
+        "a": "Later",
+        "b": "this month",
+        "items": [
+          [
+            "bird",
+            "Outdoors"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "business",
+    "order": 4,
+    "label": "Business & networking",
+    "crumb": "Business & networking",
+    "eyebrow": "Conferences · Meetups · Job fairs",
+    "titleA": "Business events",
+    "titleB": "& networking",
+    "intro": "Startup conferences, tech meetups, founder breakfasts, job fairs and B2B expos across Hyderabad.",
+    "span": "14 – 31 Oct",
+    "heroTone": "olive",
+    "heroPhoto": "Networking at a conference",
+    "date": "This Month",
+    "subs": [
+      "All",
+      "Conferences",
+      "Meetups",
+      "Job fairs",
+      "Expos"
+    ],
+    "badge": "date",
+    "featured": "summit",
+    "tipTitle": "Tip:",
+    "tip": "free meetups fill fast — RSVP early, and bring a few printed or digital cards for the networking break.",
+    "groups": [
+      {
+        "a": "This",
+        "b": "week",
+        "items": [
+          [
+            "genai",
+            "Meetups"
+          ]
+        ]
+      },
+      {
+        "a": "Next",
+        "b": "week",
+        "items": [
+          [
+            "founders",
+            "Meetups"
+          ],
+          [
+            "summit",
+            "Conferences"
+          ]
+        ]
+      },
+      {
+        "a": "Later",
+        "b": "this month",
+        "items": [
+          [
+            "jobs",
+            "Job fairs"
+          ],
+          [
+            "agri",
+            "Expos"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "trending",
+    "order": 5,
+    "label": "Trending",
+    "crumb": "Trending",
+    "eyebrow": "Most saved this week",
+    "titleA": "Trending",
+    "titleB": "in Hyderabad",
+    "intro": "The events people are saving and sharing most this week.",
+    "span": "9 – 26 Oct",
+    "heroTone": "accent",
+    "heroPhoto": "Crowd at an evening event",
+    "date": "This Month",
+    "subs": [
+      "All",
+      "Free",
+      "Under ₹500",
+      "₹500+"
+    ],
+    "badge": "date",
+    "featured": "craft",
+    "tipTitle": "Why trending?",
+    "tip": "ranked by saves and shares over the last 7 days. [Ranking method to confirm.]",
+    "groups": [
+      {
+        "a": "Most saved",
+        "b": "this week",
+        "items": [
+          [
+            "craft",
+            "Free"
+          ],
+          [
+            "indie",
+            "₹500+"
+          ],
+          [
+            "expo",
+            "Free"
+          ],
+          [
+            "comedy",
+            "Under ₹500"
+          ],
+          [
+            "summit",
+            "₹500+"
+          ],
+          [
+            "makers",
+            "Free"
+          ],
+          [
+            "kayak",
+            "₹500+"
+          ]
+        ]
+      }
+    ]
+  }
+]

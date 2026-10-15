@@ -1,0 +1,53 @@
+{
+  "tags": [
+    "Family-friendly",
+    "Outdoors",
+    "Vegetarian options",
+    "Live music"
+  ],
+  "about": [
+    "Two evenings of street food along the lakefront — Hyderabadi classics, regional thalis, Irani chai counters and a dessert lane — with live folk and indie music after sunset.",
+    "Entry passes cover access only; food is paid at each stall. [Organizer to confirm stall list and payment options.]"
+  ],
+  "schedule": [
+    {
+      "time": "5:00 PM",
+      "title": "Gates open",
+      "note": "Stalls start serving; chai counters open first."
+    },
+    {
+      "time": "6:30 PM",
+      "title": "Lanterns & folk set",
+      "note": "[Performer name] on the lakeside stage."
+    },
+    {
+      "time": "8:00 PM",
+      "title": "Dessert lane & indie set",
+      "note": "[Performer name]. Best time for qubani ka meetha and kulfi."
+    },
+    {
+      "time": "11:00 PM",
+      "title": "Close",
+      "note": "Last orders around 10:30 PM."
+    }
+  ],
+  "venueInfo": [
+    {
+      "label": "Necklace Road",
+      "value": "[Full venue address from organizer]"
+    },
+    {
+      "label": "Public transport",
+      "value": "[Nearest metro / MMTS station]"
+    },
+    {
+      "label": "Parking",
+      "value": "[Parking details from organizer]"
+    }
+  ],
+  "organizer": {
+    "initial": "O",
+    "name": "[Organizer name]",
+    "count": "[Number]"
+  }
+}

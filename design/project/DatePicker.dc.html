@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Custom dates</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F5EF}
+a{color:#36563B}a:hover{color:#263D2A}
+:focus-visible{outline:2px solid #C95335;outline-offset:2px}
+button:disabled{cursor:not-allowed}
+</style>
+</helmet>
+<div style="background: #F7F5EF; color: #202820; font-family: 'Manrope', system-ui, sans-serif; min-height: 100vh">
+
+<div style="background: #E8EDE5; color: #263D2A; font-size: 13px; font-weight: 500; text-align: center; padding: 8px 16px">Sample content — dates and events are illustrative, not verified listings.</div>
+
+<header style="border-bottom: 1px solid #E5E3DA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #263D2A; font-weight: 700; font-size: 20px; letter-spacing: -0.01em">
+<span style="width: 34px; height: 34px; border-radius: 10px; background: #36563B; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>
+[Brand]</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-left: auto">
+<a href="Explore.dc.html" style="text-decoration: none; font-size: 15px; font-weight: 700; color: #36563B">Explore</a>
+<a href="Saved.dc.html" style="text-decoration: none; font-size: 15px; font-weight: 600; color: #202820">Saved Events</a>
+<a href="ListEvent.dc.html" style="text-decoration: none; display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; border: 1.5px solid #36563B; color: #36563B; font-size: 15px; font-weight: 700">Register as organizer</a>
+</nav>
+</div>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 96px">
+<section style="padding: 48px 0 0">
+<h1 style="margin: 0; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 300">Explore <span style="font-weight: 700; color: #36563B">Hyderabad</span></h1>
+<div role="group" aria-label="Date shortcuts" style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 4px 28px; border-bottom: 1px solid #E5E3DA">
+<a href="Explore.dc.html" style="display: flex; align-items: center; min-height: 48px; font-size: 15px; font-weight: 600; color: #62685F; text-decoration: none">Today</a>
+<a href="Explore.dc.html" style="display: flex; align-items: center; min-height: 48px; font-size: 15px; font-weight: 600; color: #62685F; text-decoration: none">Tomorrow</a>
+<a href="Collection.dc.html" style="display: flex; align-items: center; min-height: 48px; font-size: 15px; font-weight: 600; color: #62685F; text-decoration: none">This Weekend</a>
+<a href="Explore.dc.html" style="display: flex; align-items: center; min-height: 48px; font-size: 15px; font-weight: 600; color: #62685F; text-decoration: none">Next Week</a>
+<a href="Explore.dc.html" style="display: flex; align-items: center; min-height: 48px; font-size: 15px; font-weight: 600; color: #62685F; text-decoration: none">This Month</a>
+<button aria-expanded="{{openStr}}" aria-controls="dp-panel" onClick="{{toggle}}" style="display: flex; align-items: center; gap: 6px; min-height: 48px; border: none; border-bottom: 2px solid #36563B; margin-bottom: -1px; background: none; padding: 0 2px; font: 700 15px 'Manrope', sans-serif; color: #36563B; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg>{{tabLabel}}</button>
+</div>
+</section>
+
+<sc-if value="{{open}}" hint-placeholder-val="{{ true }}">
+<section id="dp-panel" role="dialog" aria-label="Choose custom dates" style="margin-top: 12px; background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; box-shadow: 0 16px 40px rgba(32,40,32,0.12); display: flex; flex-wrap: wrap; overflow: hidden">
+<div style="flex: 1 1 200px; padding: 24px; border-right: 1px solid #E5E3DA; background: #F7F5EF; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B; margin-bottom: 6px">Quick picks</div>
+<sc-for list="{{presets}}" as="p" hint-placeholder-count="4">
+<button onClick="{{p.pick}}" style="{{p.style}}">{{p.label}}<span style="display: block; font-size: 12px; font-weight: 500; color: #62685F">{{p.sub}}</span></button>
+</sc-for>
+</div>
+
+<div style="flex: 999 1 560px; min-width: 0; padding: 24px clamp(16px, 3vw, 32px)">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<button aria-label="Previous months" onClick="{{prev}}" disabled="{{prevDisabled}}" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #E5E3DA; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{prevColor}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg></button>
+<div style="font-size: 14px; color: #62685F">Pick a start date, then an end date</div>
+<button aria-label="Next months" onClick="{{next}}" disabled="{{nextDisabled}}" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #E5E3DA; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{nextColor}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 24px 40px">
+<sc-for list="{{months}}" as="m" hint-placeholder-count="2">
+<div style="flex: 1 1 300px">
+<h2 style="margin: 0 0 12px; text-align: center; font-size: 17px; font-weight: 800; color: #263D2A">{{m.name}}</h2>
+<div role="grid" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 4px; text-align: center">
+<sc-for list="{{weekdays}}" as="w" hint-placeholder-count="7">
+<div style="font-size: 12px; font-weight: 700; color: #62685F; padding-bottom: 6px">{{w}}</div>
+</sc-for>
+<sc-for list="{{m.cells}}" as="c" hint-placeholder-count="35">
+<div style="{{c.wrap}}">
+<sc-if value="{{c.real}}" hint-placeholder-val="{{ true }}">
+<button aria-label="{{c.aria}}" aria-pressed="{{c.pressed}}" disabled="{{c.disabled}}" onClick="{{c.pick}}" style="{{c.style}}">{{c.d}}<span style="{{c.dot}}"></span></button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: #62685F; align-items: center">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 6px; height: 6px; border-radius: 999px; background: #C95335"></span>Events on this day</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 14px; height: 14px; border-radius: 4px; border: 1.5px solid #36563B"></span>Today</span>
+</div>
+
+<fieldset style="margin: 20px 0 0; padding: 16px 0 0; border: none; border-top: 1px solid #E5E3DA">
+<legend style="font-size: 14px; font-weight: 700; padding: 0; float: left; width: 100%; margin-bottom: 10px">Time of day <span style="font-weight: 500; color: #62685F">(optional)</span></legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; clear: both">
+<sc-for list="{{times}}" as="t" hint-placeholder-count="4">
+<button aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}} <span style="font-weight: 500">{{t.sub}}</span></button>
+</sc-for>
+</div>
+</fieldset>
+</div>
+
+<div style="flex: 1 1 100%; padding: 16px 24px; border-top: 1px solid #E5E3DA; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<div aria-live="polite"><div style="font-size: 18px; font-weight: 800">{{summary}}</div><div style="font-size: 14px; color: #62685F">{{summarySub}}</div></div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<button onClick="{{clearAll}}" style="min-height: 52px; padding: 0 20px; border-radius: 12px; border: 1.5px solid #36563B; background: #FFFFFF; color: #36563B; font: 700 15px 'Manrope', sans-serif; cursor: pointer">Clear</button>
+<button onClick="{{apply}}" disabled="{{applyDisabled}}" style="min-height: 52px; padding: 0 28px; border: none; border-radius: 12px; background: {{applyBg}}; color: #FFFFFF; font: 700 19px 'Manrope', sans-serif; cursor: pointer">Show {{matchCount}} events</button>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{applied}}" hint-placeholder-val="{{ false }}">
+<section style="padding-top: 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<span style="font-size: 22px; font-weight: 700">{{matchCount}} events</span>
+<button onClick="{{toggle}}" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #36563B; background: #E8EDE5; color: #263D2A; font: 700 14px 'Manrope', sans-serif; cursor: pointer">{{summary}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#263D2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+</div>
+</section>
+</sc-if>
+
+<section aria-label="Matching events" style="padding-top: 28px">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px">
+<sc-for list="{{matches}}" as="e" hint-placeholder-count="4">
+<article style="background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; overflow: hidden">
+<div style="position: relative; aspect-ratio: 3 / 2; background: {{e.tone}}"><span style="position: absolute; top: 12px; left: 12px; background: #FFFFFF; color: #263D2A; font-size: 13px; font-weight: 800; padding: 6px 12px; border-radius: 999px">{{e.date}}</span></div>
+<div style="padding: 16px 18px 18px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #36563B">{{e.cat}}</div>
+<h3 style="margin: 6px 0 0; font-size: 17px; font-weight: 700"><a href="EventDetail.dc.html" style="color: #202820; text-decoration: none">{{e.title}}</a></h3>
+<div style="margin-top: 4px; font-size: 14px; color: #62685F">{{e.venue}} · {{e.price}}</div>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { start: 17, end: 25, offset: 0, times: ['Evening'], open: true, applied: false };
+  }
+  renderVals() {
+    const TODAY = 10;
+    const MONTHS = [
+      { name: 'October 2026', short: 'Oct', lead: 4, days: 31, base: 0 },
+      { name: 'November 2026', short: 'Nov', lead: 0, days: 30, base: 31 },
+      { name: 'December 2026', short: 'Dec', lead: 2, days: 31, base: 61 }
+    ];
+    const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const eventDays = [10, 11, 12, 13, 14, 15, 16, 17, 18, 22, 23, 24, 25, 26, 29, 30, 31];
+    const label = (i) => {
+      const m = i > 61 ? MONTHS[2] : (i > 31 ? MONTHS[1] : MONTHS[0]);
+      return WD[(4 + i - 1) % 7] + ' ' + (i - m.base) + ' ' + m.short;
+    };
+    const s = this.state.start, e = this.state.end;
+    const pick = (i) => () => {
+      if (s === null || (s !== null && e !== null) || i < s) this.setState({ start: i, end: null });
+      else this.setState({ end: i });
+    };
+    const months = MONTHS.slice(this.state.offset, this.state.offset + 2).map((m) => {
+      const cells = [];
+      for (let k = 0; k < m.lead; k++) cells.push({ real: false, wrap: 'height: 44px;' });
+      for (let d = 1; d <= m.days; d++) {
+        const i = m.base + d;
+        const past = i < TODAY;
+        const isStart = i === s, isEnd = i === e;
+        const inRange = s !== null && e !== null && i > s && i < e;
+        const edge = isStart || isEnd;
+        const dotOn = eventDays.indexOf(i) >= 0;
+        let wrap = 'height: 44px; display: flex; justify-content: center;';
+        if (s !== null && e !== null && i >= s && i <= e && s !== e) {
+          wrap += ' background: #E8EDE5;';
+          if (isStart) wrap += ' border-radius: 999px 0 0 999px;';
+          if (isEnd) wrap += ' border-radius: 0 999px 999px 0;';
+        }
+        let style = 'position: relative; width: 44px; height: 44px; border-radius: 999px; font: 600 15px Manrope, sans-serif; cursor: pointer; display: flex; align-items: center; justify-content: center;';
+        if (edge) style += ' background: #36563B; color: #FFFFFF; border: none; font-weight: 800;';
+        else if (past) style += ' background: transparent; color: #62685F; border: none; text-decoration: line-through;';
+        else if (i === TODAY) style += ' background: #FFFFFF; color: #202820; border: 1.5px solid #36563B;';
+        else style += ' background: transparent; color: ' + (inRange ? '#263D2A' : '#202820') + '; border: none;';
+        cells.push({
+          real: true, d: String(d), wrap: wrap, style: style,
+          disabled: past, pressed: edge ? 'true' : 'false',
+          aria: label(i) + (dotOn ? ', has events' : '') + (past ? ', unavailable' : ''),
+          dot: 'position: absolute; bottom: 5px; left: 50%; margin-left: -2.5px; width: 5px; height: 5px; border-radius: 999px; background: ' + (dotOn && !past ? (edge ? '#FFFFFF' : '#C95335') : 'transparent') + ';',
+          pick: pick(i)
+        });
+      }
+      return { name: m.name, cells: cells };
+    });
+    const presetDefs = [
+      { label: 'Next 7 days', a: 10, b: 16 },
+      { label: 'Next 2 weekends', a: 17, b: 25 },
+      { label: 'Rest of October', a: 10, b: 31 },
+      { label: 'November', a: 32, b: 61 }
+    ];
+    const presets = presetDefs.map((p) => {
+      const on = s === p.a && e === p.b;
+      return {
+        label: p.label, sub: label(p.a) + ' – ' + label(p.b),
+        pick: () => this.setState({ start: p.a, end: p.b, offset: p.a > 31 ? 1 : 0 }),
+        style: 'display: block; width: 100%; text-align: left; min-height: 52px; padding: 8px 12px; border-radius: 12px; cursor: pointer; font: 700 15px Manrope, sans-serif;' + (on ? ' border: 1.5px solid #36563B; background: #FFFFFF; color: #263D2A;' : ' border: 1px solid transparent; background: transparent; color: #202820;')
+      };
+    });
+    const timeDefs = [{ l: 'Morning', s: 'before 12' }, { l: 'Afternoon', s: '12–5' }, { l: 'Evening', s: '5–9' }, { l: 'Late night', s: 'after 9' }];
+    const times = timeDefs.map((t) => {
+      const on = this.state.times.indexOf(t.l) >= 0;
+      return {
+        label: t.l, sub: t.s, pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ times: on ? this.state.times.filter((x) => x !== t.l) : this.state.times.concat([t.l]) }),
+        style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font: 700 14px Manrope, sans-serif;' + (on ? ' border: 1px solid #36563B; background: #36563B; color: #FFFFFF;' : ' border: 1px solid #E5E3DA; background: #FFFFFF; color: #202820;')
+      };
+    });
+    const T = { deep: '#263D2A', olive: '#36563B', terra: '#C95335', so: '#E8EDE5', st: '#F8E9E2' };
+    const ev = [
+      { a: 9, b: 18, title: 'Deccan Craft & Handloom Exhibition', cat: 'Exhibition', date: '9–18 Oct', venue: 'Shilparamam', price: 'Free entry', tone: T.terra },
+      { a: 10, b: 11, title: 'Necklace Road Night Food Festival', cat: 'Food festival', date: '10–11 Oct', venue: 'Necklace Road', price: '₹200', tone: T.deep },
+      { a: 14, b: 14, title: 'GenAI Builders Meetup', cat: 'Tech meetup', date: 'Wed 14 Oct', venue: 'Raidurg', price: 'Free · RSVP', tone: T.so },
+      { a: 16, b: 18, title: 'Hyderabad Property & Home Expo', cat: 'Trade fair', date: '16–18 Oct', venue: 'HITEX', price: 'Free', tone: T.so },
+      { a: 17, b: 18, title: "Makers' Pop-up: Small Brands Bazaar", cat: 'Pop-up', date: '17–18 Oct', venue: 'Gachibowli', price: 'Free entry', tone: T.terra },
+      { a: 17, b: 17, title: 'Puppet Theatre: Tales of the Deccan', cat: 'Kids’ show', date: 'Sat 17 Oct', venue: 'Ravindra Bharathi', price: '₹250', tone: T.olive },
+      { a: 22, b: 22, title: 'Deccan Startup Connect', cat: 'Conference', date: 'Thu 22 Oct', venue: 'HICC', price: '₹1,500', tone: T.deep },
+      { a: 23, b: 25, title: 'Bridal & Jewellery Showcase', cat: 'Shopping exhibition', date: '23–25 Oct', venue: 'Banjara Hills', price: 'Free entry', tone: T.olive },
+      { a: 24, b: 24, title: 'Hyderabad Tech Job Fair', cat: 'Job fair', date: 'Sat 24 Oct', venue: 'HITEX', price: 'Free', tone: T.olive },
+      { a: 24, b: 24, title: 'Bird Walk at Ameenpur Lake', cat: 'Nature walk', date: 'Sat 24 Oct', venue: 'Ameenpur', price: '₹200', tone: T.st },
+      { a: 26, b: 26, title: 'Moonlight Kayaking', cat: 'Adventure', date: 'Mon 26 Oct', venue: 'Durgam Cheruvu', price: '₹900', tone: T.deep },
+      { a: 29, b: 31, title: 'AgriTech & Food Processing Expo', cat: 'Business expo', date: '29–31 Oct', venue: 'HITEX', price: 'Trade visitors', tone: T.deep }
+    ];
+    const lo = s, hi = e === null ? s : e;
+    const matches = lo === null ? [] : ev.filter((x) => x.b >= lo && x.a <= hi);
+    let summary = 'No dates selected', sub = 'Choose a start date';
+    if (s !== null && e === null) { summary = label(s) + ' – …'; sub = 'Now choose an end date'; }
+    if (s !== null && e !== null) { const n = e - s + 1; summary = label(s) + ' – ' + label(e); sub = n + (n === 1 ? ' day' : ' days') + (this.state.times.length ? ' · ' + this.state.times.join(', ') : ''); }
+    const ready = s !== null && e !== null;
+    return {
+      months: months, weekdays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'], presets: presets, times: times,
+      summary: summary, summarySub: sub,
+      matches: matches, matchCount: String(matches.length),
+      open: this.state.open, openStr: this.state.open ? 'true' : 'false',
+      applied: this.state.applied && !this.state.open,
+      tabLabel: this.state.applied && ready ? summary : 'Custom Dates',
+      toggle: () => this.setState({ open: !this.state.open }),
+      apply: () => this.setState({ open: false, applied: true }),
+      applyDisabled: !ready, applyBg: ready ? '#C95335' : '#62685F',
+      clearAll: () => this.setState({ start: null, end: null, times: [], applied: false }),
+      prev: () => this.setState({ offset: 0 }), next: () => this.setState({ offset: 1 }),
+      prevDisabled: this.state.offset === 0, nextDisabled: this.state.offset === 1,
+      prevColor: this.state.offset === 0 ? '#E5E3DA' : '#36563B', nextColor: this.state.offset === 1 ? '#E5E3DA' : '#36563B'
+    };
+  }
+}
+</script>
+</body>
+</html>

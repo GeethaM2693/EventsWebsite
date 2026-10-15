@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Event detail — Night Food Festival</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F5EF}
+a{color:#36563B}a:hover{color:#263D2A}
+:focus-visible{outline:2px solid #C95335;outline-offset:2px}
+</style>
+</helmet>
+<div style="background: #F7F5EF; color: #202820; font-family: 'Manrope', system-ui, sans-serif; min-height: 100vh">
+
+<div style="background: #E8EDE5; color: #263D2A; font-size: 13px; font-weight: 500; text-align: center; padding: 8px 16px">Sample listing — this event, its schedule and prices are illustrative, not a verified event.</div>
+
+<header style="border-bottom: 1px solid #E5E3DA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #263D2A; font-weight: 700; font-size: 20px; letter-spacing: -0.01em">
+<span style="width: 34px; height: 34px; border-radius: 10px; background: #36563B; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>
+[Brand]</a>
+<button style="display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 1px solid #E5E3DA; border-radius: 12px; background: #FFFFFF; color: #36563B; font: 600 15px 'Manrope', sans-serif; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+Hyderabad
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-left: auto">
+<a href="Explore.dc.html" style="text-decoration: none; font-size: 15px; font-weight: 600; color: #202820">Explore</a>
+<a href="Saved.dc.html" style="text-decoration: none; font-size: 15px; font-weight: 600; color: #202820; display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>Saved Events</a>
+<a href="ListEvent.dc.html" style="text-decoration: none; display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; border: 1.5px solid #36563B; color: #36563B; font-size: 15px; font-weight: 700">Register as organizer</a>
+</nav>
+</div>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 96px">
+<section style="padding: 40px 0 0">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #62685F"><a href="Main.dc.html" style="font-weight: 600">Home</a> / <a href="Explore.dc.html" style="font-weight: 600">Explore</a> / Food &amp; Markets</nav>
+<div style="margin-top: 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Food festival · Outdoors · Family-friendly</div>
+<div style="margin-top: 10px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<h1 style="margin: 0; flex: 1 1 560px; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 700">Necklace Road Night Food Festival</h1>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<button aria-pressed="{{savedPressed}}" onClick="{{toggleSave}}" style="{{saveStyle}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="{{heartFill}}" stroke="#36563B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>{{saveLabel}}</button>
+<button style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid #E5E3DA; background: #FFFFFF; color: #36563B; font: 700 15px 'Manrope', sans-serif; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"></path></svg>Share</button>
+</div>
+</div>
+<div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 16px; font-weight: 600">
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg>Sat 10 – Sun 11 Oct</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>5 – 11 PM</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Necklace Road, Hyderabad</span>
+</div>
+</section>
+
+<section aria-label="Photos" style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px">
+<div style="position: relative; grid-column: span 2; min-height: 420px; border-radius: 16px; background: #263D2A"><span style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; color: #202820; font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px">Photo · Lantern-lit food stalls</span></div>
+<div style="display: grid; gap: 12px">
+<div style="position: relative; min-height: 204px; border-radius: 16px; background: #C95335"><span style="position: absolute; left: 12px; bottom: 12px; background: #FFFFFF; color: #202820; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Photo · Irani chai counter</span></div>
+<div style="position: relative; min-height: 204px; border-radius: 16px; background: #E8EDE5"><span style="position: absolute; left: 12px; bottom: 12px; background: #FFFFFF; color: #202820; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Photo · Folk band on stage</span><button style="position: absolute; right: 12px; bottom: 8px; min-height: 40px; padding: 0 14px; border-radius: 12px; border: none; background: #FFFFFF; color: #36563B; font: 700 14px 'Manrope', sans-serif; cursor: pointer">View all photos</button></div>
+</div>
+</section>
+
+<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 56px">
+<section aria-labelledby="d-about">
+<h2 id="d-about" style="margin: 0; font-size: 28px; font-weight: 300; letter-spacing: -0.02em">About <span style="font-weight: 700; color: #36563B">this event</span></h2>
+<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #202820">Two evenings of street food along the lakefront — Hyderabadi classics, regional thalis, Irani chai counters and a dessert lane — with live folk and indie music after sunset.</p>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.7; color: #202820">Entry passes cover access only; food is paid at each stall. [Organizer to confirm stall list and payment options.]</p>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: #E8EDE5; color: #263D2A">Family-friendly</span>
+<span style="font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: #E8EDE5; color: #263D2A">Outdoors</span>
+<span style="font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: #E8EDE5; color: #263D2A">Vegetarian options</span>
+<span style="font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: #E8EDE5; color: #263D2A">Live music</span>
+</div>
+</section>
+
+<section aria-labelledby="d-sched">
+<h2 id="d-sched" style="margin: 0; font-size: 28px; font-weight: 300; letter-spacing: -0.02em">Schedule <span style="font-weight: 700; color: #36563B">each evening</span></h2>
+<ol style="list-style: none; margin: 20px 0 0; padding: 0; border-top: 1px solid #E5E3DA">
+<li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid #E5E3DA"><span style="flex: 0 0 110px; font-weight: 700; color: #36563B">5:00 PM</span><span style="flex: 1 1 300px"><span style="display: block; font-size: 17px; font-weight: 700">Gates open</span><span style="font-size: 15px; color: #62685F">Stalls start serving; chai counters open first.</span></span></li>
+<li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid #E5E3DA"><span style="flex: 0 0 110px; font-weight: 700; color: #36563B">6:30 PM</span><span style="flex: 1 1 300px"><span style="display: block; font-size: 17px; font-weight: 700">Lanterns &amp; folk set</span><span style="font-size: 15px; color: #62685F">[Performer name] on the lakeside stage.</span></span></li>
+<li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid #E5E3DA"><span style="flex: 0 0 110px; font-weight: 700; color: #36563B">8:00 PM</span><span style="flex: 1 1 300px"><span style="display: block; font-size: 17px; font-weight: 700">Dessert lane &amp; indie set</span><span style="font-size: 15px; color: #62685F">[Performer name]. Best time for qubani ka meetha and kulfi.</span></span></li>
+<li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid #E5E3DA"><span style="flex: 0 0 110px; font-weight: 700; color: #36563B">11:00 PM</span><span style="flex: 1 1 300px"><span style="display: block; font-size: 17px; font-weight: 700">Close</span><span style="font-size: 15px; color: #62685F">Last orders around 10:30 PM.</span></span></li>
+</ol>
+</section>
+
+<section aria-labelledby="d-venue">
+<h2 id="d-venue" style="margin: 0; font-size: 28px; font-weight: 300; letter-spacing: -0.02em">Venue <span style="font-weight: 700; color: #36563B">&amp; getting there</span></h2>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 3 1 320px; border-radius: 16px; overflow: hidden; border: 1px solid #E5E3DA">
+<svg viewBox="0 0 560 300" width="100%" style="display: block" role="img" aria-label="Map preview of the venue on Necklace Road beside Hussain Sagar">
+<rect width="560" height="300" fill="#E8EDE5"></rect>
+<path d="M180 70c80-40 230-30 270 40s-30 150-140 150-210-120-130-190z" fill="#F7F5EF" stroke="#E5E3DA" stroke-width="2"></path>
+<path d="M130 300 C 120 200, 140 90, 230 40 S 470 20, 560 60" stroke="#FFFFFF" stroke-width="12" fill="none"></path>
+<path d="M0 230 C 120 220, 240 280, 560 250" stroke="#FFFFFF" stroke-width="8" fill="none"></path>
+<text x="270" y="160" font-family="Manrope, sans-serif" font-size="14" fill="#62685F">Hussain Sagar</text>
+<circle cx="150" cy="150" r="18" fill="#C95335" stroke="#FFFFFF" stroke-width="3"></circle>
+<circle cx="150" cy="150" r="6" fill="#FFFFFF"></circle>
+</svg>
+</div>
+<div style="flex: 2 1 240px; display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6">
+<div><div style="font-weight: 700">Necklace Road</div><div style="color: #62685F">[Full venue address from organizer]</div></div>
+<div><div style="font-weight: 700">Public transport</div><div style="color: #62685F">[Nearest metro / MMTS station]</div></div>
+<div><div style="font-weight: 700">Parking</div><div style="color: #62685F">[Parking details from organizer]</div></div>
+<a href="#" style="font-weight: 700">Get directions</a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="d-org" style="background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+<span style="width: 56px; height: 56px; border-radius: 14px; background: #F8E9E2; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #263D2A">O</span>
+<div style="flex: 1 1 240px">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #36563B">Organized by</div>
+<h2 id="d-org" style="margin: 4px 0 0; font-size: 20px; font-weight: 700">[Organizer name]</h2>
+<div style="font-size: 14px; color: #62685F">[Number] events listed on [Brand]</div>
+</div>
+<a href="#" style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; border: 1.5px solid #36563B; color: #36563B; text-decoration: none; font-size: 15px; font-weight: 700">Contact organizer</a>
+</section>
+</div>
+
+<aside aria-labelledby="d-book" style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div>
+<h2 id="d-book" style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #36563B">Entry pass</h2>
+<div style="margin-top: 6px; font-size: 34px; font-weight: 800; letter-spacing: -0.02em">₹200 <span style="font-size: 15px; font-weight: 500; color: #62685F">per person</span></div>
+</div>
+<fieldset style="border: none; margin: 0; padding: 0">
+<legend style="font-size: 14px; font-weight: 700; margin-bottom: 10px">Choose a date</legend>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="2">
+<button aria-pressed="{{d.pressed}}" onClick="{{d.pick}}" style="{{d.style}}"><span style="display: block; font-size: 13px; font-weight: 600">{{d.wk}}</span><span style="display: block; font-size: 18px; font-weight: 800">{{d.label}}</span></button>
+</sc-for>
+</div>
+</fieldset>
+<div>
+<div style="font-size: 14px; font-weight: 700; margin-bottom: 10px">Passes</div>
+<div style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #E5E3DA; border-radius: 12px; padding: 4px">
+<button aria-label="Fewer passes" onClick="{{dec}}" style="width: 44px; height: 44px; border: none; border-radius: 10px; background: #E8EDE5; color: #263D2A; font: 800 20px 'Manrope', sans-serif; cursor: pointer">−</button>
+<span aria-live="polite" style="font-size: 18px; font-weight: 800">{{qty}}</span>
+<button aria-label="More passes" onClick="{{inc}}" style="width: 44px; height: 44px; border: none; border-radius: 10px; background: #E8EDE5; color: #263D2A; font: 800 20px 'Manrope', sans-serif; cursor: pointer">+</button>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 16px; border-top: 1px solid #E5E3DA"><span style="font-size: 15px; color: #62685F">Total · {{dayLabel}}</span><span style="font-size: 22px; font-weight: 800">{{total}}</span></div>
+<a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-radius: 12px; background: #C95335; color: #FFFFFF; text-decoration: none; font-size: 19px; font-weight: 700">Get passes</a>
+<button style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 12px; border: 1.5px solid #36563B; background: #FFFFFF; color: #36563B; font: 700 15px 'Manrope', sans-serif; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg>Add to calendar</button>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #62685F">Passes are sold by the organizer via [ticketing partner]. Refund policy: [organizer policy].</p>
+</aside>
+</div>
+
+<section aria-labelledby="d-more" style="padding-top: 96px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px">
+<h2 id="d-more" style="margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 300; letter-spacing: -0.02em">You might <span style="font-weight: 700; color: #36563B">also like</span></h2>
+<a href="Explore.dc.html" style="font-size: 15px; font-weight: 700">Explore more</a>
+</div>
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px">
+<sc-for list="{{similar}}" as="e" hint-placeholder-count="3">
+<article style="background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; overflow: hidden">
+<div style="position: relative; aspect-ratio: 3 / 2; background: {{e.tone}}"><span style="position: absolute; left: 12px; bottom: 12px; background: #FFFFFF; color: #202820; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Photo · {{e.photo}}</span></div>
+<div style="padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #36563B">{{e.cat}} · {{e.date}}</div>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700"><a href="EventDetail.dc.html" style="color: #202820; text-decoration: none">{{e.title}}</a></h3>
+<div style="font-size: 14px; color: #62685F">{{e.venue}} · {{e.price}}</div>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+</main>
+
+<footer style="border-top: 1px solid #E5E3DA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #62685F">
+<span>© 2026 [Brand] · Listings shown are sample data, not verified events.</span>
+<span style="display: flex; gap: 20px; flex-wrap: wrap"><a href="#">About</a><a href="#">Contact</a><a href="ListEvent.dc.html">List your event</a><a href="#">Privacy</a></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { day: 'sat', qty: 2, saved: false };
+  }
+  renderVals() {
+    const days = [{ id: 'sat', wk: 'Saturday', label: '10 Oct' }, { id: 'sun', wk: 'Sunday', label: '11 Oct' }];
+    const base = 'min-height: 64px; border-radius: 12px; cursor: pointer; font-family: Manrope, sans-serif; text-align: left; padding: 8px 14px;';
+    const saved = this.state.saved;
+    const T = { deep: '#263D2A', terra: '#C95335', st: '#F8E9E2', so: '#E8EDE5' };
+    const cur = days.find((d) => d.id === this.state.day);
+    return {
+      days: days.map((d) => ({
+        wk: d.wk, label: d.label,
+        pressed: d.id === this.state.day ? 'true' : 'false',
+        style: base + (d.id === this.state.day ? ' border: 2px solid #36563B; background: #E8EDE5; color: #263D2A;' : ' border: 1px solid #E5E3DA; background: #FFFFFF; color: #202820;'),
+        pick: () => this.setState({ day: d.id })
+      })),
+      dayLabel: cur.wk + ' ' + cur.label,
+      qty: String(this.state.qty),
+      total: '₹' + (this.state.qty * 200).toLocaleString('en-IN'),
+      inc: () => this.setState({ qty: Math.min(10, this.state.qty + 1) }),
+      dec: () => this.setState({ qty: Math.max(1, this.state.qty - 1) }),
+      savedPressed: saved ? 'true' : 'false',
+      saveLabel: saved ? 'Saved' : 'Save',
+      heartFill: saved ? '#36563B' : 'none',
+      toggleSave: () => this.setState({ saved: !saved }),
+      saveStyle: 'display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 12px; font: 700 15px Manrope, sans-serif; cursor: pointer; color: #36563B;' + (saved ? ' border: 1.5px solid #36563B; background: #E8EDE5;' : ' border: 1px solid #E5E3DA; background: #FFFFFF;'),
+      similar: [
+        { title: 'Vintage & Vinyl Flea Market', cat: 'Flea market', date: 'Sun 11 Oct', venue: 'Jubilee Hills', price: '₹100 entry', photo: 'Crates of records', tone: T.st },
+        { title: "Makers' Pop-up: Small Brands Bazaar", cat: 'Pop-up store', date: '17–18 Oct', venue: 'Gachibowli', price: 'Free entry', photo: 'Stalls of local labels', tone: T.terra },
+        { title: "Kokapet Farmers' Market", cat: 'Market', date: 'Sat 10 Oct', venue: 'Kokapet', price: 'Free', photo: 'Baskets of fresh produce', tone: T.so }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

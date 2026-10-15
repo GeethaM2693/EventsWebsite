@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Search</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F5EF}
+a{color:#36563B}a:hover{color:#263D2A}
+:focus-visible{outline:2px solid #C95335;outline-offset:2px}
+input::placeholder{color:#62685F}
+</style>
+</helmet>
+<div style="background: #F7F5EF; color: #202820; font-family: 'Manrope', system-ui, sans-serif; min-height: 100vh">
+
+<div style="background: #E8EDE5; color: #263D2A; font-size: 13px; font-weight: 500; text-align: center; padding: 8px 16px">Sample content — search runs over illustrative Hyderabad listings, not verified events.</div>
+
+<header style="border-bottom: 1px solid #E5E3DA; background: #F7F5EF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #263D2A; font-weight: 700; font-size: 20px; letter-spacing: -0.01em">
+<span style="width: 34px; height: 34px; border-radius: 10px; background: #36563B; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>
+[Brand]</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-left: auto">
+<a href="Explore.dc.html" style="text-decoration: none; font-size: 15px; font-weight: 600; color: #202820">Explore</a>
+<a href="Saved.dc.html" style="text-decoration: none; font-size: 15px; font-weight: 600; color: #202820">Saved Events</a>
+<a href="ListEvent.dc.html" style="text-decoration: none; display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; border: 1.5px solid #36563B; color: #36563B; font-size: 15px; font-weight: 700">Register as organizer</a>
+</nav>
+</div>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 96px">
+<section style="padding: 48px 0 0; max-width: 860px">
+<form role="search" onSubmit="{{onSubmit}}" style="display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 2px solid #36563B; border-radius: 16px; padding: 8px 8px 8px 20px; box-shadow: 0 6px 24px rgba(32,40,32,0.08)">
+<label for="s-q" style="display: flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search</span></label>
+<input id="s-q" type="search" autocomplete="off" aria-autocomplete="list" aria-controls="s-panel" value="{{q}}" onChange="{{onQ}}" placeholder="Search events, exhibitions, activities..." style="flex: 1; min-width: 0; border: none; outline: none; background: transparent; font: 500 18px 'Manrope', sans-serif; color: #202820; height: 52px">
+<sc-if value="{{hasQ}}" hint-placeholder-val="{{ true }}">
+<button type="button" aria-label="Clear search" onClick="{{clear}}" style="flex: none; width: 44px; height: 44px; border: none; border-radius: 12px; background: #E8EDE5; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#263D2A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</sc-if>
+<button type="submit" style="flex: none; height: 56px; padding: 0 28px; border: none; border-radius: 12px; background: #C95335; color: #FFFFFF; font: 700 19px 'Manrope', sans-serif; cursor: pointer">Search</button>
+</form>
+
+<sc-if value="{{showPanel}}" hint-placeholder-val="{{ true }}">
+<div id="s-panel" role="listbox" aria-label="Search suggestions" style="margin-top: 10px; background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; box-shadow: 0 12px 32px rgba(32,40,32,0.10); padding: 12px">
+
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 12px 12px 4px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Recent searches</div>
+<div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{recent}}" as="r" hint-placeholder-count="3">
+<button onClick="{{r.go}}" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #E5E3DA; background: #FFFFFF; font: 600 14px 'Manrope', sans-serif; color: #202820; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#62685F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{r.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="padding: 20px 12px 4px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Popular in Hyderabad this week</div>
+<div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{popular}}" as="r" hint-placeholder-count="5">
+<button onClick="{{r.go}}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: none; background: #E8EDE5; font: 600 14px 'Manrope', sans-serif; color: #263D2A; cursor: pointer">{{r.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="padding: 20px 12px 8px; display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 1 1 260px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">When</div>
+<div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px">
+<a href="Explore.dc.html" style="display: flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid #E5E3DA; font-size: 14px; font-weight: 600; text-decoration: none; color: #202820">Today</a>
+<a href="Collection.dc.html" style="display: flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid #E5E3DA; font-size: 14px; font-weight: 600; text-decoration: none; color: #202820">This weekend</a>
+<a href="DatePicker.dc.html" style="display: flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid #E5E3DA; font-size: 14px; font-weight: 600; text-decoration: none; color: #202820">Pick dates…</a>
+</div>
+</div>
+<div style="flex: 1 1 260px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Browse</div>
+<div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px">
+<a href="Collection.dc.html" style="display: flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid #E5E3DA; font-size: 14px; font-weight: 600; text-decoration: none; color: #202820">Exhibitions</a>
+<a href="Collection.dc.html" style="display: flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid #E5E3DA; font-size: 14px; font-weight: 600; text-decoration: none; color: #202820">Markets</a>
+<a href="Collection.dc.html" style="display: flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid #E5E3DA; font-size: 14px; font-weight: 600; text-decoration: none; color: #202820">Family</a>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isSuggest}}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{hasEventSugg}}" hint-placeholder-val="{{ true }}">
+<div style="padding: 10px 12px 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Events</div>
+<sc-for list="{{eventSugg}}" as="e" hint-placeholder-count="3">
+<a href="EventDetail.dc.html" role="option" aria-selected="{{e.active}}" style="{{e.rowStyle}}">
+<span style="flex: none; width: 48px; height: 48px; border-radius: 10px; background: {{e.tone}}"></span>
+<span style="flex: 1; min-width: 0"><span style="display: block; font-size: 16px; font-weight: 500; color: #202820">{{e.pre}}<strong style="font-weight: 800">{{e.mid}}</strong>{{e.post}}</span><span style="display: block; font-size: 13px; color: #62685F">{{e.date}} · {{e.venue}}</span></span>
+<span style="font-size: 12px; font-weight: 700; color: #36563B">{{e.cat}}</span>
+</a>
+</sc-for>
+</sc-if>
+<sc-if value="{{hasCatSugg}}" hint-placeholder-val="{{ true }}">
+<div style="padding: 14px 12px 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Categories</div>
+<sc-for list="{{catSugg}}" as="c" hint-placeholder-count="1">
+<a href="Collection.dc.html" role="option" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 12px; border-radius: 12px; text-decoration: none; color: #202820"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span style="font-size: 15px; font-weight: 700">{{c.label}}</span><span style="font-size: 13px; color: #62685F">{{c.count}}</span></a>
+</sc-for>
+</sc-if>
+<sc-if value="{{hasPlaceSugg}}" hint-placeholder-val="{{ true }}">
+<div style="padding: 14px 12px 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #36563B">Areas &amp; venues</div>
+<sc-for list="{{placeSugg}}" as="p" hint-placeholder-count="1">
+<a href="Explore.dc.html" role="option" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 12px; border-radius: 12px; text-decoration: none; color: #202820"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><span style="font-size: 15px; font-weight: 700">{{p.label}}</span><span style="font-size: 13px; color: #62685F">{{p.count}}</span></a>
+</sc-for>
+</sc-if>
+<sc-if value="{{hasAnySugg}}" hint-placeholder-val="{{ true }}">
+<button onClick="{{onSubmit}}" style="margin-top: 8px; width: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 0 14px; border-radius: 12px; border: none; background: #F7F5EF; font: 700 15px 'Manrope', sans-serif; color: #36563B; cursor: pointer"><span>See all results for “{{q}}”</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#36563B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</sc-if>
+<sc-if value="{{noSugg}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 16px 12px">
+<div style="font-size: 16px; font-weight: 700">No matches for “{{q}}”</div>
+<div style="margin-top: 4px; font-size: 14px; color: #62685F">Check the spelling, or try a broader word like “market”, “expo” or “music”.</div>
+</div>
+</sc-if>
+</sc-if>
+
+<div style="margin-top: 8px; padding: 10px 12px 4px; border-top: 1px solid #E5E3DA; font-size: 12px; color: #62685F">↑ ↓ to move · Enter to open · Esc to close</div>
+</div>
+</sc-if>
+</section>
+
+<sc-if value="{{showResults}}" hint-placeholder-val="{{ false }}">
+<section aria-labelledby="s-res" style="padding-top: 40px">
+<h1 id="s-res" style="margin: 0; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 300">{{resultCount}} results for <span style="font-weight: 700; color: #36563B">“{{q}}”</span></h1>
+<div role="group" aria-label="Date shortcuts" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 4px 28px; border-bottom: 1px solid #E5E3DA">
+<button aria-pressed="true" style="min-height: 48px; border: none; background: none; padding: 0 2px; font: 700 15px 'Manrope', sans-serif; color: #36563B; border-bottom: 2px solid #36563B; margin-bottom: -1px; cursor: pointer">Any date</button>
+<button style="min-height: 48px; border: none; background: none; padding: 0 2px; font: 600 15px 'Manrope', sans-serif; color: #62685F; border-bottom: 2px solid transparent; cursor: pointer">Today</button>
+<button style="min-height: 48px; border: none; background: none; padding: 0 2px; font: 600 15px 'Manrope', sans-serif; color: #62685F; border-bottom: 2px solid transparent; cursor: pointer">This Weekend</button>
+<button style="min-height: 48px; border: none; background: none; padding: 0 2px; font: 600 15px 'Manrope', sans-serif; color: #62685F; border-bottom: 2px solid transparent; cursor: pointer">This Month</button>
+<a href="DatePicker.dc.html" style="display: flex; align-items: center; min-height: 48px; padding: 0 2px; font-size: 15px; font-weight: 600; color: #62685F; text-decoration: none">Custom Dates</a>
+</div>
+<div role="group" aria-label="Filter by type" style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{facets}}" as="f" hint-placeholder-count="4">
+<button aria-pressed="{{f.pressed}}" onClick="{{f.pick}}" style="{{f.style}}">{{f.label}} <span style="font-weight: 500">({{f.count}})</span></button>
+</sc-for>
+</div>
+<sc-if value="{{hasResults}}" hint-placeholder-val="{{ true }}">
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 28px 24px">
+<sc-for list="{{results}}" as="e" hint-placeholder-count="4">
+<article style="background: #FFFFFF; border: 1px solid #E5E3DA; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; background: {{e.tone}}">
+<span style="position: absolute; top: 12px; left: 12px; background: #FFFFFF; color: #263D2A; font-size: 13px; font-weight: 800; padding: 6px 12px; border-radius: 999px">{{e.date}}</span>
+<span style="position: absolute; left: 12px; bottom: 12px; background: #FFFFFF; color: #202820; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Photo · {{e.photo}}</span>
+</div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #36563B">{{e.cat}}</div>
+<h2 style="margin: 0; font-size: 18px; line-height: 1.3; font-weight: 700"><a href="EventDetail.dc.html" style="color: #202820; text-decoration: none">{{e.title}}</a></h2>
+<div style="font-size: 14px; color: #62685F">{{e.venue}} · {{e.price}}</div>
+</div>
+</article>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{noResults}}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 28px; background: #FFFFFF; border: 1px dashed #36563B; border-radius: 16px; padding: 48px 24px; text-align: center">
+<h2 style="margin: 0; font-size: 24px; font-weight: 700">No events match “{{q}}”</h2>
+<p style="margin: 10px auto 0; max-width: 460px; font-size: 16px; line-height: 1.6; color: #62685F">Try a different spelling or a broader word. These are popular right now:</p>
+<div style="margin-top: 18px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{popular}}" as="r" hint-placeholder-count="5">
+<button onClick="{{r.go}}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: none; background: #E8EDE5; font: 600 14px 'Manrope', sans-serif; color: #263D2A; cursor: pointer">{{r.label}}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+</section>
+</sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startState":{"editor":"enum","options":["Empty focus","Typing","Results","No results"],"default":"Typing","section":"Prototype"},"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = this.fromStart(props.startState ?? 'Typing');
+  }
+  fromStart(s) {
+    if (s === 'Empty focus') return { q: '', submitted: false, facet: 'All' };
+    if (s === 'Results') return { q: 'market', submitted: true, facet: 'All' };
+    if (s === 'No results') return { q: 'opera', submitted: true, facet: 'All' };
+    return { q: 'expo', submitted: false, facet: 'All' };
+  }
+  componentDidUpdate(prev) {
+    if (prev.startState !== this.props.startState) this.setState(this.fromStart(this.props.startState ?? 'Typing'));
+  }
+  renderVals() {
+    const T = { deep: '#263D2A', olive: '#36563B', terra: '#C95335', so: '#E8EDE5', st: '#F8E9E2' };
+    const all = [
+      { title: 'Deccan Craft & Handloom Exhibition', cat: 'Exhibition', date: '9–18 Oct', venue: 'Shilparamam, Madhapur', area: 'Madhapur', price: 'Free entry', photo: 'Handloom weaves', tone: T.terra },
+      { title: 'Necklace Road Night Food Festival', cat: 'Food festival', date: 'Sat 10 – Sun 11 Oct', venue: 'Necklace Road', area: 'Necklace Road', price: '₹200 entry', photo: 'Lantern-lit stalls', tone: T.deep },
+      { title: 'Indie Sundays: Live by the Lake', cat: 'Concert', date: 'Sun 11 Oct', venue: 'Durgam Cheruvu', area: 'Madhapur', price: 'From ₹799', photo: 'Open-air stage', tone: T.olive },
+      { title: 'Hyderabad Property & Home Expo', cat: 'Trade fair', date: '16–18 Oct', venue: 'HITEX, Madhapur', area: 'Madhapur', price: 'Free with registration', photo: 'Expo hall', tone: T.so },
+      { title: 'Stand-up Night: Biryani & Banter', cat: 'Comedy', date: 'Sat 10 Oct', venue: 'Banjara Hills', area: 'Banjara Hills', price: '₹499', photo: 'Small stage', tone: T.st },
+      { title: 'Deccan Startup Connect', cat: 'Conference', date: 'Thu 22 Oct', venue: 'HICC, Madhapur', area: 'Madhapur', price: '₹1,500', photo: 'Panel on stage', tone: T.deep },
+      { title: "Kokapet Farmers' Market", cat: 'Market', date: 'Sat 10 Oct', venue: 'Kokapet', area: 'Kokapet', price: 'Free', photo: 'Fresh produce', tone: T.so },
+      { title: 'Pottery Basics Workshop', cat: 'Workshop', date: 'Sat 10 Oct', venue: 'Jubilee Hills', area: 'Jubilee Hills', price: '₹1,200', photo: 'Potter’s wheel', tone: T.st },
+      { title: "Kids' Science Carnival", cat: 'Family', date: 'Sun 11 Oct', venue: 'Gachibowli', area: 'Gachibowli', price: '₹300', photo: 'Science stall', tone: T.terra },
+      { title: 'Vintage & Vinyl Flea Market', cat: 'Market', date: 'Sun 11 Oct', venue: 'Jubilee Hills', area: 'Jubilee Hills', price: '₹100 entry', photo: 'Crates of records', tone: T.st },
+      { title: 'Bridal & Jewellery Showcase', cat: 'Exhibition', date: '23–25 Oct', venue: 'Banjara Hills', area: 'Banjara Hills', price: 'Free entry', photo: 'Jewellery cases', tone: T.olive },
+      { title: 'AgriTech & Food Processing Expo', cat: 'Trade fair', date: '29–31 Oct', venue: 'HITEX, Madhapur', area: 'Madhapur', price: 'Trade visitors', photo: 'Expo floor', tone: T.deep },
+      { title: "Makers' Pop-up: Small Brands Bazaar", cat: 'Market', date: '17–18 Oct', venue: 'Gachibowli', area: 'Gachibowli', price: 'Free entry', photo: 'Local labels', tone: T.terra },
+      { title: 'GenAI Builders Meetup', cat: 'Conference', date: 'Wed 14 Oct', venue: 'Raidurg', area: 'Raidurg', price: 'Free · RSVP', photo: 'Lightning talk', tone: T.so },
+      { title: 'Hyderabad Tech Job Fair', cat: 'Trade fair', date: 'Sat 24 Oct', venue: 'HITEX, Madhapur', area: 'Madhapur', price: 'Free', photo: 'Recruiter booths', tone: T.olive },
+      { title: 'Moonlight Kayaking', cat: 'Adventure', date: 'Mon 26 Oct', venue: 'Durgam Cheruvu', area: 'Madhapur', price: '₹900', photo: 'Kayaks at night', tone: T.deep }
+    ];
+    const cats = [
+      { label: 'Exhibitions & Expos', keys: ['expo', 'exhibition', 'trade', 'fair', 'show'] },
+      { label: 'Food & Markets', keys: ['food', 'market', 'flea', 'bazaar', 'pop-up', 'shopping'] },
+      { label: 'Music & Comedy', keys: ['music', 'concert', 'comedy', 'stand-up', 'gig'] },
+      { label: 'Family & Kids', keys: ['family', 'kids', 'children'] },
+      { label: 'Business & Tech', keys: ['business', 'tech', 'startup', 'job', 'meetup', 'networking'] }
+    ];
+    const q = this.state.q;
+    const ql = q.trim().toLowerCase();
+    const match = (e) => ql.length > 0 && (e.title + ' ' + e.cat + ' ' + e.venue).toLowerCase().indexOf(ql) >= 0;
+    const hits = all.filter(match);
+    const eventSugg = all.filter((e) => e.title.toLowerCase().indexOf(ql) >= 0 && ql.length > 1).slice(0, 4).map((e, i) => {
+      const k = e.title.toLowerCase().indexOf(ql);
+      return Object.assign({}, e, {
+        pre: e.title.slice(0, k), mid: e.title.slice(k, k + ql.length), post: e.title.slice(k + ql.length),
+        active: i === 0 ? 'true' : 'false',
+        rowStyle: 'display: flex; align-items: center; gap: 14px; padding: 8px 12px; border-radius: 12px; text-decoration: none;' + (i === 0 ? ' background: #E8EDE5;' : ' background: transparent;')
+      });
+    });
+    const catSugg = ql.length > 1 ? cats.filter((c) => c.label.toLowerCase().indexOf(ql) >= 0 || c.keys.some((k) => k.indexOf(ql) === 0 || ql.indexOf(k) === 0)).slice(0, 2).map((c) => ({ label: c.label, count: 'Category' })) : [];
+    const areas = [];
+    all.forEach((e) => { if (areas.indexOf(e.venue) < 0) areas.push(e.venue); });
+    const placeSugg = ql.length > 1 ? areas.filter((a) => a.toLowerCase().indexOf(ql) >= 0).slice(0, 3).map((a) => ({ label: a, count: all.filter((e) => e.venue === a).length + ' events' })) : [];
+    const anySugg = eventSugg.length + catSugg.length + placeSugg.length > 0;
+    const go = (label) => () => this.setState({ q: label, submitted: true, facet: 'All' });
+    const facetNames = ['All'];
+    hits.forEach((e) => { if (facetNames.indexOf(e.cat) < 0) facetNames.push(e.cat); });
+    const facet = facetNames.indexOf(this.state.facet) >= 0 ? this.state.facet : 'All';
+    const shown = facet === 'All' ? hits : hits.filter((e) => e.cat === facet);
+    const submitted = this.state.submitted;
+    return {
+      q: q,
+      hasQ: q.length > 0,
+      onQ: (ev) => this.setState({ q: ev.target.value, submitted: false, facet: 'All' }),
+      onSubmit: (ev) => { if (ev && ev.preventDefault) ev.preventDefault(); this.setState({ submitted: true, facet: 'All' }); },
+      clear: () => this.setState({ q: '', submitted: false, facet: 'All' }),
+      showPanel: !submitted,
+      isEmpty: !submitted && ql.length === 0,
+      isSuggest: !submitted && ql.length > 0,
+      eventSugg: eventSugg, catSugg: catSugg, placeSugg: placeSugg,
+      hasEventSugg: eventSugg.length > 0, hasCatSugg: catSugg.length > 0, hasPlaceSugg: placeSugg.length > 0,
+      hasAnySugg: anySugg, noSugg: !anySugg,
+      recent: ['flea market', 'pottery workshop', 'HITEX'].map((l) => ({ label: l, go: go(l) })),
+      popular: ['food festival', 'expo', 'comedy', 'kids', 'market', 'kayaking'].map((l) => ({ label: l, go: go(l) })),
+      showResults: submitted,
+      resultCount: String(hits.length),
+      hasResults: shown.length > 0,
+      noResults: hits.length === 0,
+      results: shown,
+      facets: hits.length === 0 ? [] : facetNames.map((n) => ({
+        label: n,
+        count: String(n === 'All' ? hits.length : hits.filter((e) => e.cat === n).length),
+        pressed: n === facet ? 'true' : 'false',
+        pick: () => this.setState({ facet: n }),
+        style: 'min-height: 40px; padding: 0 14px; border-radius: 999px; cursor: pointer; font: 700 14px Manrope, sans-serif;' + (n === facet ? ' border: 1px solid #36563B; background: #36563B; color: #FFFFFF;' : ' border: 1px solid #E5E3DA; background: #FFFFFF; color: #202820;')
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

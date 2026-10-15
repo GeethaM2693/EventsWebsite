@@ -1,0 +1,380 @@
+[
+  {
+    "id": "craft",
+    "title": "Deccan Craft & Handloom Exhibition",
+    "category": "Exhibition",
+    "date": "9–18 Oct",
+    "time": "10 AM – 9 PM",
+    "venue": "Shilparamam, Madhapur",
+    "price": "Free entry",
+    "photo": "Handloom weaves on display",
+    "tone": "accent",
+    "group": "Exhibitions & Expos",
+    "type": "Exhibition",
+    "area": "Madhapur",
+    "days": [
+      9,
+      18
+    ]
+  },
+  {
+    "id": "food",
+    "title": "Necklace Road Night Food Festival",
+    "category": "Food festival",
+    "date": "Sat 10 – Sun 11 Oct",
+    "time": "5 – 11 PM",
+    "venue": "Necklace Road",
+    "price": "₹200 entry",
+    "photo": "Lantern-lit food stalls",
+    "tone": "deep",
+    "group": "Food & Markets",
+    "type": "Food festival",
+    "area": "Necklace Road",
+    "days": [
+      10,
+      11
+    ]
+  },
+  {
+    "id": "indie",
+    "title": "Indie Sundays: Live by the Lake",
+    "category": "Concert",
+    "date": "Sun 11 Oct",
+    "time": "6:30 PM",
+    "venue": "Durgam Cheruvu",
+    "price": "From ₹799",
+    "photo": "Open-air stage at dusk",
+    "tone": "olive",
+    "group": "Music & Comedy",
+    "type": "Concert",
+    "area": "Madhapur",
+    "days": [
+      11,
+      11
+    ]
+  },
+  {
+    "id": "expo",
+    "title": "Hyderabad Property & Home Expo",
+    "category": "Trade fair",
+    "date": "16–18 Oct",
+    "time": "10 AM – 7 PM",
+    "venue": "HITEX, Madhapur",
+    "price": "Free with registration",
+    "photo": "Expo hall from above",
+    "tone": "soft",
+    "group": "Exhibitions & Expos",
+    "type": "Trade fair",
+    "area": "Madhapur",
+    "days": [
+      16,
+      18
+    ]
+  },
+  {
+    "id": "comedy",
+    "title": "Stand-up Night: Biryani & Banter",
+    "category": "Comedy",
+    "date": "Sat 10 Oct",
+    "time": "8 PM",
+    "venue": "Banjara Hills",
+    "price": "₹499",
+    "photo": "Comic on a small stage",
+    "tone": "warm",
+    "group": "Music & Comedy",
+    "type": "Comedy",
+    "area": "Banjara Hills",
+    "days": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "summit",
+    "title": "Deccan Startup Connect",
+    "category": "Conference",
+    "date": "Thu 22 Oct",
+    "time": "9:30 AM",
+    "venue": "HICC, Madhapur",
+    "price": "₹1,500",
+    "photo": "Panel discussion on stage",
+    "tone": "deep",
+    "group": "Business & Tech",
+    "type": "Conference",
+    "area": "Madhapur",
+    "days": [
+      22,
+      22
+    ]
+  },
+  {
+    "id": "heritage",
+    "title": "Sunrise Heritage Walk: Qutb Shahi Tombs",
+    "category": "Heritage walk",
+    "date": "Sat 10 Oct",
+    "time": "6:30 AM",
+    "venue": "Qutb Shahi Tombs",
+    "price": "₹350",
+    "photo": "Domes at sunrise",
+    "tone": "olive",
+    "group": "Culture & Festivals",
+    "type": "Heritage walk",
+    "area": "Golconda",
+    "days": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "farmers",
+    "title": "Kokapet Farmers' Market",
+    "category": "Market",
+    "date": "Sat 10 Oct",
+    "time": "8 AM – 1 PM",
+    "venue": "Kokapet",
+    "price": "Free",
+    "photo": "Baskets of fresh produce",
+    "tone": "soft",
+    "group": "Food & Markets",
+    "type": "Market",
+    "area": "Kokapet",
+    "days": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "pottery",
+    "title": "Pottery Basics Workshop",
+    "category": "Workshop",
+    "date": "Sat 10 Oct",
+    "time": "11 AM",
+    "venue": "Jubilee Hills",
+    "price": "₹1,200",
+    "photo": "Hands at a potter’s wheel",
+    "tone": "warm",
+    "group": "Workshops & Classes",
+    "type": "Workshop",
+    "area": "Jubilee Hills",
+    "days": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "science",
+    "title": "Kids' Science Carnival",
+    "category": "Family",
+    "date": "Sun 11 Oct",
+    "time": "10 AM – 6 PM",
+    "venue": "Gachibowli",
+    "price": "₹300",
+    "photo": "Children at a science stall",
+    "tone": "accent",
+    "group": "Family & Kids",
+    "type": "Family",
+    "area": "Gachibowli",
+    "days": [
+      11,
+      11
+    ]
+  },
+  {
+    "id": "flea",
+    "title": "Vintage & Vinyl Flea Market",
+    "category": "Flea market",
+    "date": "Sun 11 Oct",
+    "time": "11 AM – 8 PM",
+    "venue": "Jubilee Hills",
+    "price": "₹100 entry",
+    "photo": "Crates of records",
+    "tone": "warm",
+    "group": "Food & Markets",
+    "type": "Market",
+    "area": "Jubilee Hills",
+    "days": [
+      11,
+      11
+    ]
+  },
+  {
+    "id": "bridal",
+    "title": "Bridal & Jewellery Showcase",
+    "category": "Shopping exhibition",
+    "date": "23–25 Oct",
+    "time": "11 AM – 9 PM",
+    "venue": "Banjara Hills",
+    "price": "Free entry",
+    "photo": "Jewellery display cases",
+    "tone": "olive",
+    "group": "Exhibitions & Expos",
+    "type": "Exhibition",
+    "area": "Banjara Hills",
+    "days": [
+      23,
+      25
+    ]
+  },
+  {
+    "id": "agri",
+    "title": "AgriTech & Food Processing Expo",
+    "category": "Business expo",
+    "date": "29–31 Oct",
+    "time": "10 AM – 6 PM",
+    "venue": "HITEX, Madhapur",
+    "price": "Trade visitors",
+    "photo": "Machinery on the expo floor",
+    "tone": "deep",
+    "group": "Business & Tech",
+    "type": "Trade fair",
+    "area": "Madhapur",
+    "days": [
+      29,
+      31
+    ]
+  },
+  {
+    "id": "makers",
+    "title": "Makers' Pop-up: Small Brands Bazaar",
+    "category": "Pop-up store",
+    "date": "17–18 Oct",
+    "time": "11 AM – 9 PM",
+    "venue": "Gachibowli",
+    "price": "Free entry",
+    "photo": "Stalls of local labels",
+    "tone": "accent",
+    "group": "Food & Markets",
+    "type": "Market",
+    "area": "Gachibowli",
+    "days": [
+      17,
+      18
+    ]
+  },
+  {
+    "id": "puppet",
+    "title": "Puppet Theatre: Tales of the Deccan",
+    "category": "Kids’ show",
+    "date": "Sat 17 Oct",
+    "time": "4 PM",
+    "venue": "Ravindra Bharathi",
+    "price": "₹250",
+    "photo": "Shadow puppets on stage",
+    "tone": "olive",
+    "group": "Family & Kids",
+    "type": "Kids’ show",
+    "area": "Ravindra Bharathi",
+    "days": [
+      17,
+      17
+    ]
+  },
+  {
+    "id": "cycle",
+    "title": "Sunday Family Cycle Ride",
+    "category": "Outdoors",
+    "date": "Sun 18 Oct",
+    "time": "6 AM",
+    "venue": "Gachibowli",
+    "price": "₹150",
+    "photo": "Families cycling at dawn",
+    "tone": "soft",
+    "group": "Adventure & Outdoors",
+    "type": "Outdoors",
+    "area": "Gachibowli",
+    "days": [
+      18,
+      18
+    ]
+  },
+  {
+    "id": "bird",
+    "title": "Bird Walk at Ameenpur Lake",
+    "category": "Nature walk",
+    "date": "Sat 24 Oct",
+    "time": "6:30 AM",
+    "venue": "Ameenpur",
+    "price": "₹200",
+    "photo": "Painted storks on the lake",
+    "tone": "warm",
+    "group": "Adventure & Outdoors",
+    "type": "Nature walk",
+    "area": "Ameenpur",
+    "days": [
+      24,
+      24
+    ]
+  },
+  {
+    "id": "genai",
+    "title": "GenAI Builders Meetup",
+    "category": "Tech meetup",
+    "date": "Wed 14 Oct",
+    "time": "6:30 PM",
+    "venue": "Raidurg",
+    "price": "Free · RSVP",
+    "photo": "Lightning talk in progress",
+    "tone": "soft",
+    "group": "Business & Tech",
+    "type": "Conference",
+    "area": "Raidurg",
+    "days": [
+      14,
+      14
+    ]
+  },
+  {
+    "id": "jobs",
+    "title": "Hyderabad Tech Job Fair",
+    "category": "Job fair",
+    "date": "Sat 24 Oct",
+    "time": "9 AM – 5 PM",
+    "venue": "HITEX, Madhapur",
+    "price": "Free",
+    "photo": "Recruiter booths",
+    "tone": "olive",
+    "group": "Business & Tech",
+    "type": "Trade fair",
+    "area": "Madhapur",
+    "days": [
+      24,
+      24
+    ]
+  },
+  {
+    "id": "founders",
+    "title": "Founders' Breakfast Circle",
+    "category": "Networking",
+    "date": "Sat 17 Oct",
+    "time": "8 AM",
+    "venue": "Banjara Hills",
+    "price": "₹600",
+    "photo": "Breakfast table conversation",
+    "tone": "warm",
+    "group": "Business & Tech",
+    "type": "Networking",
+    "area": "Banjara Hills",
+    "days": [
+      17,
+      17
+    ]
+  },
+  {
+    "id": "kayak",
+    "title": "Moonlight Kayaking",
+    "category": "Adventure",
+    "date": "Mon 26 Oct",
+    "time": "7 PM",
+    "venue": "Durgam Cheruvu",
+    "price": "₹900",
+    "photo": "Kayaks under the bridge lights",
+    "tone": "deep",
+    "group": "Adventure & Outdoors",
+    "type": "Adventure",
+    "area": "Madhapur",
+    "days": [
+      26,
+      26
+    ]
+  }
+]

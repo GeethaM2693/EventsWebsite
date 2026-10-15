@@ -1,0 +1,38 @@
+[
+  {
+    "id": "stepwell",
+    "n": "01",
+    "name": "Bansilalpet Stepwell",
+    "area": "Secunderabad",
+    "note": "A restored historic stepwell — quiet, geometric and best around sunset.",
+    "photo": "Stepwell terraces",
+    "tone": "olive"
+  },
+  {
+    "id": "paigah",
+    "n": "02",
+    "name": "Paigah Tombs",
+    "area": "Pisal Banda",
+    "note": "Intricate lattice and stucco work, rarely crowded on weekday mornings.",
+    "photo": "Carved marble screens",
+    "tone": "warm"
+  },
+  {
+    "id": "khajaguda",
+    "n": "03",
+    "name": "Khajaguda Rock Trails",
+    "area": "Khajaguda",
+    "note": "Granite boulders and easy scrambles at the edge of the city.",
+    "photo": "Boulders at golden hour",
+    "tone": "deep"
+  },
+  {
+    "id": "irani",
+    "n": "04",
+    "name": "Old City Irani Café Trail",
+    "area": "Near Charminar",
+    "note": "Chai, Osmania biscuits and early-morning light on the old streets.",
+    "photo": "Chai glasses on marble",
+    "tone": "accent"
+  }
+]
